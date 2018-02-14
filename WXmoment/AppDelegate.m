@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "MomentViewController.h"
 #import <WeexSDK.h>
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,7 @@
     
     // 增加标题栏 http://ju.outofmemory.cn/entry/284956
     LoginViewController *loginView = [[LoginViewController alloc]  init];
+//    ViewController *loginView = [[ViewController alloc] init];
     
     // 设置哪个 view 作为 root view
     UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:loginView];

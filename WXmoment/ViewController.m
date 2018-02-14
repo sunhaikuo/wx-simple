@@ -51,6 +51,9 @@
         NSLog(@"渲染完成");
     };
 
+    // 自己的代码
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    self.title = @"微信登录"; // 标题栏
 }
 
 - (void)didReceiveMemoryWarning {
