@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3A7A8F3D8B6705887896039 /* libPods-WXmoment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0C7309300D412E385BC8C3 /* libPods-WXmoment.a */; };
 		DF41C25F1DBDDEC9009EADE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF41C25E1DBDDEC9009EADE9 /* main.m */; };
 		DF41C2621DBDDEC9009EADE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF41C2611DBDDEC9009EADE9 /* AppDelegate.m */; };
 		DF41C2651DBDDEC9009EADE9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF41C2641DBDDEC9009EADE9 /* LoginViewController.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A9CBC19598EF9184A7BEA18D /* Pods-WXmoment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXmoment.release.xcconfig"; path = "Pods/Target Support Files/Pods-WXmoment/Pods-WXmoment.release.xcconfig"; sourceTree = "<group>"; };
 		DF41C25A1DBDDEC9009EADE9 /* WXmoment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXmoment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41C25E1DBDDEC9009EADE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF41C2601DBDDEC9009EADE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		DF9486231DC090EF00A9C1A9 /* WXmomentFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXmomentFrameModel.m; sourceTree = "<group>"; };
 		DF9486251DC0917000A9C1A9 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		DF9486271DC0A55E00A9C1A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB0C7309300D412E385BC8C3 /* libPods-WXmoment.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WXmoment.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6009025C616B51E24E3EA57 /* Pods-WXmoment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXmoment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WXmoment/Pods-WXmoment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A7A8F3D8B6705887896039 /* libPods-WXmoment.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		554B5F793757868BB7DCDA91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6009025C616B51E24E3EA57 /* Pods-WXmoment.debug.xcconfig */,
+				A9CBC19598EF9184A7BEA18D /* Pods-WXmoment.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		98E4F3163EDCE976FA25C87D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB0C7309300D412E385BC8C3 /* libPods-WXmoment.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF41C2511DBDDEC9009EADE9 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +124,8 @@
 				DF41C2761DBDDEC9009EADE9 /* WXmomentTests */,
 				DF41C2811DBDDEC9009EADE9 /* WXmomentUITests */,
 				DF41C25B1DBDDEC9009EADE9 /* Products */,
+				554B5F793757868BB7DCDA91 /* Pods */,
+				98E4F3163EDCE976FA25C87D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF41C2871DBDDEC9009EADE9 /* Build configuration list for PBXNativeTarget "WXmoment" */;
 			buildPhases = (
+				D1DE1A10288D877D1C997758 /* [CP] Check Pods Manifest.lock */,
 				DF41C2561DBDDEC9009EADE9 /* Sources */,
 				DF41C2571DBDDEC9009EADE9 /* Frameworks */,
 				DF41C2581DBDDEC9009EADE9 /* Resources */,
+				DDF5242475CF32E1BE1E7B52 /* [CP] Embed Pods Frameworks */,
+				139AC7F18399399C72453827 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,6 +336,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		139AC7F18399399C72453827 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WXmoment/Pods-WXmoment-resources.sh",
+				"${PODS_ROOT}/WeexSDK/pre-build/native-bundle-main.js",
+				"${PODS_ROOT}/WeexSDK/ios/sdk/WeexSDK/Resources/wx_load_error@3x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/native-bundle-main.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/wx_load_error@3x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WXmoment/Pods-WXmoment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1DE1A10288D877D1C997758 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WXmoment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDF5242475CF32E1BE1E7B52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WXmoment/Pods-WXmoment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DF41C2561DBDDEC9009EADE9 /* Sources */ = {
@@ -463,6 +546,7 @@
 		};
 		DF41C2881DBDDEC9009EADE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6009025C616B51E24E3EA57 /* Pods-WXmoment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WXmoment/Info.plist;
@@ -474,6 +558,7 @@
 		};
 		DF41C2891DBDDEC9009EADE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9CBC19598EF9184A7BEA18D /* Pods-WXmoment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WXmoment/Info.plist;

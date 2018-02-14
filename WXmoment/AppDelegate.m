@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "MomentViewController.h"
-
+#import <WeexSDK.h>
 
 @interface AppDelegate ()
 
@@ -31,6 +31,17 @@
     // momentView.view.backgroundColor = [UIColor whiteColor]; 不应该在这里进行背景色等设置
     self.window.rootViewController = rootNavigationController;
     
+    
+    // weex
+    [WXAppConfiguration setAppGroup:@"AliApp"];
+    [WXAppConfiguration setAppName:@"WXmoment"];
+    [WXAppConfiguration setAppVersion:@"1.0.0"];
+    [WXSDKEngine initSDKEnvironment];
+    
+//    [WXSDKEngine registerComponent:@"MyView" withClass:[MyViewComponent class]];
+//    [WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
+//    [WXSDKEngine registerHandler:[WXNavigationDefaultImpl new] withProtocol:@protocol(WXNavigationProtocol)];
+    [WXLog setLogLevel: WXLogLevelAll];
     return YES;
 }
 

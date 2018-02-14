@@ -1,3 +1,6 @@
 .DS_Store
 .git
 .svn
+WXmoment.xcworkspace
+WXmoment.xcodeproj
+Pods/*
