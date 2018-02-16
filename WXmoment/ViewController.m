@@ -18,42 +18,43 @@
     @property (nonatomic, strong) NSURL *url;
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    NSURL *jsUrl;
+}
+
+- (instancetype) initWithJs:(NSString *)filePath {
+    self = [super init];
+    if(self) {
+        NSString *path=[NSString stringWithFormat:@"file://%@//%@",[NSBundle mainBundle].bundlePath,filePath];
+        NSLog(@"-----path:%@",path);
+        jsUrl=[NSURL URLWithString:path];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    // 创建WXSDKInstance对象
     _instance = [[WXSDKInstance alloc] init];
-    // 设置weexInstance所在的控制器
     _instance.viewController = self;
-    //设置weexInstance的frame
-    _instance.frame = self.view.frame;
-    //设置weexInstance用于渲染的`js`的URL路径(后面说明)
-    [_instance renderWithURL:self.url options:@{@"bundleUrl":[self.url absoluteString]} data:nil];
-    //为了避免循环引用声明一个弱指针的`self`
+    _instance.frame=self.view.frame;
     __weak typeof(self) weakSelf = self;
-    //设置weexInstance创建完毕回调
     _instance.onCreate = ^(UIView *view) {
-        weakSelf.weexView = view;
         [weakSelf.weexView removeFromSuperview];
+        weakSelf.weexView = view;
         [weakSelf.view addSubview:weakSelf.weexView];
     };
-    // 设置`weexInstance`出错的回调
     _instance.onFailed = ^(NSError *error) {
-        //process failure
-        NSLog(@"处理失败:%@",error);
+        NSLog(@"加载错误");
     };
-    //设置渲染完成的回调
+    
     _instance.renderFinish = ^ (UIView *view) {
-        //process renderFinish
-        NSLog(@"渲染完成");
+        NSLog(@"加载完成");
     };
-
-    // 自己的代码
-//    self.view.backgroundColor = [UIColor whiteColor];
-//    self.title = @"微信登录"; // 标题栏
+    if (!jsUrl) {
+        return;
+    }
+    [_instance renderWithURL: jsUrl];
+    self.view.backgroundColor=[UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

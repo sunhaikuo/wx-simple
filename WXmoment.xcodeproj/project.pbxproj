@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B366B362034868D0064A5B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B366B352034868D0064A5B1 /* ViewController.m */; };
+		1B366B3A20348C620064A5B1 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B366B3920348C620064A5B1 /* index.js */; };
 		C3A7A8F3D8B6705887896039 /* libPods-WXmoment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0C7309300D412E385BC8C3 /* libPods-WXmoment.a */; };
 		DF41C25F1DBDDEC9009EADE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF41C25E1DBDDEC9009EADE9 /* main.m */; };
 		DF41C2621DBDDEC9009EADE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF41C2611DBDDEC9009EADE9 /* AppDelegate.m */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		1B366B342034868D0064A5B1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1B366B352034868D0064A5B1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1B366B3920348C620064A5B1 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		A9CBC19598EF9184A7BEA18D /* Pods-WXmoment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXmoment.release.xcconfig"; path = "Pods/Target Support Files/Pods-WXmoment/Pods-WXmoment.release.xcconfig"; sourceTree = "<group>"; };
 		DF41C25A1DBDDEC9009EADE9 /* WXmoment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXmoment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41C25E1DBDDEC9009EADE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		DF41C25C1DBDDEC9009EADE9 /* WXmoment */ = {
 			isa = PBXGroup;
 			children = (
+				1B366B3920348C620064A5B1 /* index.js */,
 				DF9486271DC0A55E00A9C1A9 /* Images.xcassets */,
 				DF94861B1DC0907300A9C1A9 /* Model */,
 				DF9486171DC0901C00A9C1A9 /* Cell */,
@@ -319,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B366B3A20348C620064A5B1 /* index.js in Resources */,
 				DF41C26D1DBDDEC9009EADE9 /* LaunchScreen.storyboard in Resources */,
 				DF9486281DC0A55E00A9C1A9 /* Images.xcassets in Resources */,
 				DF9486261DC0917000A9C1A9 /* data.plist in Resources */,
