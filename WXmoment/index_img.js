@@ -77,10 +77,10 @@ __vue_styles__.push(__webpack_require__(1)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(2)
+__vue_exports__ = __webpack_require__(3)
 
 /* template */
-var __vue_template__ = __webpack_require__(3)
+var __vue_template__ = __webpack_require__(2)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -143,6 +143,26 @@ module.exports = {
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_c('image', {
+    staticClass: ["logo"],
+    attrs: {
+      "src": _vm.logo
+    }
+  }), _c('text', {
+    staticClass: ["greeting"]
+  }, [_vm._v("The environment_bbb is ready!")]), _c('text', {
+    staticClass: ["message"]
+  }, [_vm._v("Now, let's use Vue.js to build your Weex app.")])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -158,45 +178,15 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
   data: function data() {
     return {
-      logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png',
-      msg: 'Hello World!!!'
+      logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png'
     };
-  },
-
-  methods: {
-    test: function test() {
-      this.msg = 'sunhaikuo';
-    },
-    show: function show() {
-      alert(1);
-    }
   }
 };
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('text', {
-    staticClass: ["greeting"],
-    on: {
-      "click": _vm.test
-    }
-  }, [_vm._v("The environmentis ready!")]), _c('text', {
-    staticClass: ["message"],
-    on: {
-      "click": _vm.show
-    }
-  }, [_vm._v(_vm._s(_vm.msg))])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
 
 /***/ })
 /******/ ]);

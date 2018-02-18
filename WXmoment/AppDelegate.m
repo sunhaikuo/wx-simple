@@ -20,35 +20,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    // 增加标题栏 http://ju.outofmemory.cn/entry/284956
-//    LoginViewController *loginView = [[LoginViewController alloc]  init];
-//    ViewController *loginView = [[ViewController alloc] init];
-    
-    // 设置哪个 view 作为 root view
-//    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:loginView];
-    
-    // loginView.view.backgroundColor = [UIColor whiteColor]; 不应该在这里进行背景色等设置
-    // momentView.view.backgroundColor = [UIColor whiteColor]; 不应该在这里进行背景色等设置
-//    self.window.rootViewController = rootNavigationController;
-    
-    
-    // weex
+
+    LoginViewController *loginView = [[LoginViewController alloc] init];
+    // 注册weex组件
     [WXAppConfiguration setAppGroup:@"AliApp"];
     [WXAppConfiguration setAppName:@"WXmoment"];
     [WXAppConfiguration setAppVersion:@"1.0.0"];
     [WXSDKEngine initSDKEnvironment];
-    
-//    [WXSDKEngine registerComponent:@"MyView" withClass:[MyViewComponent class]];
-//    [WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
-//    [WXSDKEngine registerHandler:[WXNavigationDefaultImpl new] withProtocol:@protocol(WXNavigationProtocol)];
-//    [WXLog setLogLevel: WXLogLevelAll];
-    
-    ViewController *vc=[[ViewController alloc]initWithJs:@"index.js"];
-    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:vc];
-    self.window.rootViewController=nav;
-    
+    // 注册顶级组件
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginView];
+    self.window.rootViewController = nav;
+
     return YES;
 }
 
