@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "MomentViewController.h"
 #import <WeexSDK.h>
-#import "ViewController.h"
 
 @interface AppDelegate ()
 

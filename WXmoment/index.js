@@ -158,12 +158,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
   data: function data() {
     return {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png',
-      msg: 'Hello World!!!'
+      msg: 'Hello China!'
     };
   },
 
@@ -184,7 +185,15 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["wrapper"]
-  }, [_c('text', {
+  }, [_c('image', {
+    staticStyle: {
+      width: "640px",
+      height: "302px"
+    },
+    attrs: {
+      "src": _vm.logo
+    }
+  }), _c('text', {
     staticClass: ["greeting"],
     on: {
       "click": _vm.test

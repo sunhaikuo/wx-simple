@@ -1,12 +1,24 @@
 PODS:
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
+  - SocketRocket (0.5.1)
+  - WeexPluginLoader (0.0.1.9.1):
+    - WeexSDK
   - WeexSDK (0.18.0)
 
 DEPENDENCIES:
+  - SDWebImage
+  - SocketRocket
+  - WeexPluginLoader
   - WeexSDK
 
 SPEC CHECKSUMS:
+  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  WeexPluginLoader: 85c1304f8ba29864e58531614a0acfeceef1b85c
   WeexSDK: ac56f255ce9a48e93ebc2e003956ab20da33321d
 
-PODFILE CHECKSUM: ac5368f8c022a0602838fdc2502736cc507307dd
+PODFILE CHECKSUM: 51c40b77d269fa1b9f4a763e4d5bb731e52f0d44
 
 COCOAPODS: 1.4.0
