@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1B366B362034868D0064A5B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B366B352034868D0064A5B1 /* ViewController.m */; };
 		1B366B42203717E20064A5B1 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B366B41203717E20064A5B1 /* index.js */; };
+		86951423C9C8FB9D851D4A03 /* WXImgLoaderDefaultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 869516DD18ACB1BEE24A5A7A /* WXImgLoaderDefaultImpl.m */; };
+		86951ECC7525CABE403124F5 /* WeexSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86951AA443E5E042A364968A /* WeexSDKManager.m */; };
 		C3A7A8F3D8B6705887896039 /* libPods-WXmoment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0C7309300D412E385BC8C3 /* libPods-WXmoment.a */; };
 		DF41C25F1DBDDEC9009EADE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF41C25E1DBDDEC9009EADE9 /* main.m */; };
 		DF41C2621DBDDEC9009EADE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF41C2611DBDDEC9009EADE9 /* AppDelegate.m */; };
@@ -47,6 +49,10 @@
 		1B366B342034868D0064A5B1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1B366B352034868D0064A5B1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1B366B41203717E20064A5B1 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		869512A130CD6DD201A9A17B /* WeexSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeexSDKManager.h; sourceTree = "<group>"; };
+		869516A24C5CE0033B5AE489 /* WXImgLoaderDefaultImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImgLoaderDefaultImpl.h; sourceTree = "<group>"; };
+		869516DD18ACB1BEE24A5A7A /* WXImgLoaderDefaultImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImgLoaderDefaultImpl.m; sourceTree = "<group>"; };
+		86951AA443E5E042A364968A /* WeexSDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeexSDKManager.m; sourceTree = "<group>"; };
 		A9CBC19598EF9184A7BEA18D /* Pods-WXmoment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXmoment.release.xcconfig"; path = "Pods/Target Support Files/Pods-WXmoment/Pods-WXmoment.release.xcconfig"; sourceTree = "<group>"; };
 		DF41C25A1DBDDEC9009EADE9 /* WXmoment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXmoment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF41C25E1DBDDEC9009EADE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +120,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		86951F69975D4EECBAB9CF3D /* WeexConfig */ = {
+			isa = PBXGroup;
+			children = (
+				86951AA443E5E042A364968A /* WeexSDKManager.m */,
+				869512A130CD6DD201A9A17B /* WeexSDKManager.h */,
+				869516DD18ACB1BEE24A5A7A /* WXImgLoaderDefaultImpl.m */,
+				869516A24C5CE0033B5AE489 /* WXImgLoaderDefaultImpl.h */,
+			);
+			path = WeexConfig;
+			sourceTree = "<group>";
+		};
 		98E4F3163EDCE976FA25C87D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +180,7 @@
 				DF41C25D1DBDDEC9009EADE9 /* Supporting Files */,
 				1B366B342034868D0064A5B1 /* ViewController.h */,
 				1B366B352034868D0064A5B1 /* ViewController.m */,
+				86951F69975D4EECBAB9CF3D /* WeexConfig */,
 			);
 			path = WXmoment;
 			sourceTree = "<group>";
@@ -416,6 +434,8 @@
 				DF9486211DC090BA00A9C1A9 /* WXmomentModel.m in Sources */,
 				DF41C2941DBE37F9009EADE9 /* MomentViewController.m in Sources */,
 				DF94861E1DC0908A00A9C1A9 /* ModelGroup.m in Sources */,
+				86951ECC7525CABE403124F5 /* WeexSDKManager.m in Sources */,
+				86951423C9C8FB9D851D4A03 /* WXImgLoaderDefaultImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

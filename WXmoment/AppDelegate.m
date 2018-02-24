@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import <WeexSDK.h>
+#import "WeexSDKManager.h"
 
 @interface AppDelegate ()
 
@@ -21,10 +22,7 @@
 
     LoginViewController *loginView = [[LoginViewController alloc] init];
     // 注册weex组件
-    [WXAppConfiguration setAppGroup:@"AliApp"];
-    [WXAppConfiguration setAppName:@"WXmoment"];
-    [WXAppConfiguration setAppVersion:@"1.0.0"];
-    [WXSDKEngine initSDKEnvironment];
+    [WeexSDKManager initWeexSDK];
     // 注册顶级组件
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginView];
     self.window.rootViewController = nav;
