@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <WeexSDK.h>
 #import "WeexSDKManager.h"
+#import "WeexJson.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +27,8 @@
     // 注册顶级组件
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginView];
     self.window.rootViewController = nav;
-
+    // 获取json数据
+    [WeexJson init];
     return YES;
 }
 
