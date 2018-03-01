@@ -93,6 +93,9 @@ const int MARGIN = 20; // 内 margin
     [self.LoginButton addTarget:self action:@selector(onLoginBtnClickedStyle:) forControlEvents:UIControlEventTouchDown];
 
     [self.view addSubview:self.LoginButton];
+    // 触发点击事件
+    [self.LoginButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
 }
 
 - (void)didReceiveMemoryWarning {

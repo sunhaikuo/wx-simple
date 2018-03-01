@@ -45,13 +45,16 @@
 
     _instance = [[WXSDKInstance alloc] init];
     _instance.viewController = self;
-    _instance.frame = self.view.frame;
+//    _instance.frame = self.view.frame;
+    _instance.frame = CGRectMake(
+            self.view.frame.origin.x,
+            self.view.frame.origin.y + 64,
+            self.view.frame.size.width,
+            self.view.frame.size.height - 64);
     __weak typeof(self) weakSelf = self;
     _instance.onCreate = ^(UIView *view) {
         [weakSelf.weexView removeFromSuperview];
-        view.layoutMargins = UIEdgeInsetsMake(50, 50, 50, 50);
         weakSelf.weexView = view;
-        view.layoutMargins = UIEdgeInsetsMake(50, 50, 50, 50);
         [weakSelf.view addSubview:weakSelf.weexView];
     };
     _instance.onFailed = ^(NSError *error) {

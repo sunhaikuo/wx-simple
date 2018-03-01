@@ -11,6 +11,7 @@
 #import <WeexSDK.h>
 #import "WeexSDKManager.h"
 #import "WeexJson.h"
+#import "WeexViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,14 +22,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    LoginViewController *loginView = [[LoginViewController alloc] init];
+    // 获取json数据
+    [WeexJson init];
     // 注册weex组件
     [WeexSDKManager initWeexSDK];
+
+    LoginViewController *loginView = [[LoginViewController alloc] init];
+//    WeexViewController *loginView = [[WeexViewController alloc] init];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
     // 注册顶级组件
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginView];
     self.window.rootViewController = nav;
-    // 获取json数据
-    [WeexJson init];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

@@ -36,7 +36,10 @@ typedef void(^callbackBlock)(NSDictionary *dict, NSData *data);
  */
 + (void)init {
     NSDictionary *localDict = [self getData:@"data122"];
-    NSString *url = @"http://192.168.215.159:8196/getWeexInfo";
+    NSString *url = @"http://192.168.215.159:8196/getWeexInfo?";
+    int random = arc4random();
+    url = [url stringByAppendingFormat:@"%d", random];
+    NSLog(@"请求的url为:%@", url);
     [self getWeexInfo:url cb:^(NSDictionary *webDict, NSData *data) {
         [self compare:localDict webDict:webDict];
     }];
