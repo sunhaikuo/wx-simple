@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B366B362034868D0064A5B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B366B352034868D0064A5B1 /* ViewController.m */; };
+		1B366B362034868D0064A5B1 /* WeexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B366B352034868D0064A5B1 /* WeexViewController.m */; };
 		1B366B42203717E20064A5B1 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B366B41203717E20064A5B1 /* index.js */; };
 		68B68E5DD8667949E69E8F35 /* WeexJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B684A682BCAEDC21743904 /* WeexJson.m */; };
 		86951423C9C8FB9D851D4A03 /* WXImgLoaderDefaultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 869516DD18ACB1BEE24A5A7A /* WXImgLoaderDefaultImpl.m */; };
@@ -47,8 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B366B342034868D0064A5B1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1B366B352034868D0064A5B1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1B366B342034868D0064A5B1 /* WeexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeexViewController.h; sourceTree = "<group>"; };
+		1B366B352034868D0064A5B1 /* WeexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeexViewController.m; sourceTree = "<group>"; };
 		1B366B41203717E20064A5B1 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		68B684A682BCAEDC21743904 /* WeexJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeexJson.m; sourceTree = "<group>"; };
 		68B688379274CF9A7E1D1493 /* WeexJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeexJson.h; sourceTree = "<group>"; };
@@ -183,8 +183,8 @@
 				DF41C26B1DBDDEC9009EADE9 /* LaunchScreen.storyboard */,
 				DF41C26E1DBDDEC9009EADE9 /* Info.plist */,
 				DF41C25D1DBDDEC9009EADE9 /* Supporting Files */,
-				1B366B342034868D0064A5B1 /* ViewController.h */,
-				1B366B352034868D0064A5B1 /* ViewController.m */,
+				1B366B342034868D0064A5B1 /* WeexViewController.h */,
+				1B366B352034868D0064A5B1 /* WeexViewController.m */,
 				86951F69975D4EECBAB9CF3D /* WeexConfig */,
 			);
 			path = WXmoment;
@@ -309,6 +309,8 @@
 				TargetAttributes = {
 					DF41C2591DBDDEC9009EADE9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 883N2KGTJW;
+						ProvisioningStyle = Automatic;
 					};
 					DF41C2721DBDDEC9009EADE9 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -430,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B366B362034868D0064A5B1 /* ViewController.m in Sources */,
+				1B366B362034868D0064A5B1 /* WeexViewController.m in Sources */,
 				DF41C2651DBDDEC9009EADE9 /* LoginViewController.m in Sources */,
 				DF41C2621DBDDEC9009EADE9 /* AppDelegate.m in Sources */,
 				DF9486241DC090EF00A9C1A9 /* WXmomentFrameModel.m in Sources */,
@@ -585,10 +587,14 @@
 			baseConfigurationReference = F6009025C616B51E24E3EA57 /* Pods-WXmoment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 883N2KGTJW;
 				INFOPLIST_FILE = WXmoment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jeffcom.devework.WXmoment;
+				PRODUCT_BUNDLE_IDENTIFIER = haikuo.sun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -597,10 +603,14 @@
 			baseConfigurationReference = A9CBC19598EF9184A7BEA18D /* Pods-WXmoment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 883N2KGTJW;
 				INFOPLIST_FILE = WXmoment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jeffcom.devework.WXmoment;
+				PRODUCT_BUNDLE_IDENTIFIER = haikuo.sun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

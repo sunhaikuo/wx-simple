@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface WeexViewController : UIViewController
 - (instancetype) initWithJs:(NSString * )filePath;
 @end

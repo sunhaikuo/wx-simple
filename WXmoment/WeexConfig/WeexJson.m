@@ -31,9 +31,12 @@ typedef void(^callbackBlock)(NSDictionary *dict, NSData *data);
     [dataTask resume];
 }
 
+/**
+ * 初始化方法, 用于获取jsBundles文件
+ */
 + (void)init {
     NSDictionary *localDict = [self getData:@"data122"];
-    NSString *url = @"http://192.168.215.159:3000/getWeexInfo";
+    NSString *url = @"http://192.168.215.159:8196/getWeexInfo";
     [self getWeexInfo:url cb:^(NSDictionary *webDict, NSData *data) {
         [self compare:localDict webDict:webDict];
     }];
@@ -43,7 +46,7 @@ typedef void(^callbackBlock)(NSDictionary *dict, NSData *data);
  * 下载所有文件
  * @param dict json对象
  */
-+(void) downloadAllFile:(NSDictionary *)dict {
++ (void)downloadAllFile:(NSDictionary *)dict {
     for (NSString *key in dict) {
         NSDictionary *jsonData = [dict objectForKey:key];
         NSString *jsUrl = [jsonData objectForKey:@"jsUrl"];
@@ -57,7 +60,7 @@ typedef void(^callbackBlock)(NSDictionary *dict, NSData *data);
  * @param jsUrl js的网络url
  * @param fileName 文件名称, 如:user, 最终会拼成user.js
  */
-+(void) downloadFile:(NSString *)jsUrl fileName:(NSString *)name {
++ (void)downloadFile:(NSString *)jsUrl fileName:(NSString *)name {
     NSString *filePath = [name stringByAppendingString:@".js"];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentPath = [paths objectAtIndex:0];
@@ -74,10 +77,10 @@ typedef void(^callbackBlock)(NSDictionary *dict, NSData *data);
  * @param webDict
  */
 + (void)compare:(NSDictionary *)localDict webDict:(NSDictionary *)webDict {
-    if(localDict == nil) {
+    if (localDict == nil) {
         NSLog(@"No Data");
         [self downloadAllFile:webDict];
-    }else {
+    } else {
         for (NSString *key in localDict) {
             NSDictionary *localObj = [localDict objectForKey:key];
             NSDictionary *webObj = [webDict objectForKey:key];
@@ -85,10 +88,10 @@ typedef void(^callbackBlock)(NSDictionary *dict, NSData *data);
             NSString *webVersion = [webObj objectForKey:@"version"];
             NSString *jsUrl = [webObj objectForKey:@"jsUrl"];
             NSLog(@"local %@ web %@", localVersion, webVersion);
-            if([webVersion intValue] > [localVersion intValue]) {
-                NSLog(@"download url is %@", jsUrl);
-                [self downloadFile:jsUrl fileName:key];
-            }
+//            if([webVersion intValue] > [localVersion intValue]) {
+            NSLog(@"download url is %@", jsUrl);
+            [self downloadFile:jsUrl fileName:key];
+//            }
         }
     }
     // 把本地的字典重置
@@ -121,11 +124,21 @@ typedef void(^callbackBlock)(NSDictionary *dict, NSData *data);
     }
 }
 
-+ (void)setData:(NSString *)key dict:(NSDictionary *)dict  {
+/**
+ * 添加本地数据
+ * @param key
+ * @param dict
+ */
++ (void)setData:(NSString *)key dict:(NSDictionary *)dict {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:dict forKey:key];
 }
 
+/**
+ * 在本地获取数据
+ * @param key
+ * @return
+ */
 + (NSDictionary *)getData:(NSString *)key {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *val = [defaults objectForKey:key];

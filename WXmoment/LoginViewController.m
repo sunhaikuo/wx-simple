@@ -9,7 +9,8 @@
 #import "LoginViewController.h"
 #import "MomentViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ViewController.h"
+#import "WeexViewController.h"
+#import "WeexJson.h"
 
 #define LoginBound [[UIScreen mainScreen] bounds];
 #define LoginNameFont [UIFont systemFontOfSize:17]
@@ -105,7 +106,8 @@ const int MARGIN = 20; // 内 margin
 - (void)onLoginBtnClickedFunction:(UIButton *)sender {
     NSLog(@"clicked!");
     // 使用weex页面布局
-    ViewController *vc = [[ViewController alloc] initWithJs:@"index.js"];
+    [WeexJson init];
+    WeexViewController *vc = [[WeexViewController alloc] initWithJs:@"user"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
