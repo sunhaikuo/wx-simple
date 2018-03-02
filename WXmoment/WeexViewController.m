@@ -1,8 +1,9 @@
 
 #import "WeexViewController.h"
 #import <WeexSDK/WXSDKInstance.h>
+#import "Websocket.h"
 
-@interface WeexViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface WeexViewController () <UITableViewDataSource, UITableViewDelegate>
 //WXSDKInstance 属性
 @property(nonatomic, strong) WXSDKInstance *instance;
 // weex 视图
@@ -12,7 +13,7 @@
 
 
 // header 部分
-@property(nonatomic,weak)UITableView * tab;
+@property(nonatomic, weak) UITableView *tab;
 @property(nonatomic, strong) UITableView *TableView;
 
 @end
@@ -21,14 +22,18 @@
     NSURL *jsUrl;
 }
 
+
 - (instancetype)initWithJs:(NSString *)name {
     self = [super init];
+    [self openSocket];
     if (self) {
-        NSString *filePath = [name stringByAppendingString:@".js"];
-
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentPath = [paths objectAtIndex:0];
-        NSString *path = [documentPath stringByAppendingPathComponent:filePath];
+//        NSString *filePath = [name stringByAppendingString:@".js"];
+//        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//        NSString *documentPath = [paths objectAtIndex:0];
+//        NSString *path = [documentPath stringByAppendingPathComponent:filePath];
+        NSString *path = @"/Users/Mtime/learn/awesome-app/src/.weex_tmp/";
+        path = [path stringByAppendingString:name];
+        path = [path stringByAppendingString:@".js"];
         path = [NSString stringWithFormat:@"file://%@", path];
 
 //        NSString *path=[NSString stringWithFormat:@"file://%@//%@",[NSBundle mainBundle].bundlePath,filePath];
@@ -38,9 +43,40 @@
     return self;
 }
 
+- (void)openSocket {
+    NSString *wsUrl = @"ws://192.168.215.159:8083/";
+    SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:
+            [NSURLRequest requestWithURL:[NSURL URLWithString:wsUrl]]];
+    socket.delegate = self;    // 实现这个 SRWebSocketDelegate 协议啊
+    [socket open];    // open 就是直接连接了
+    NSLog(@"-------------------------------Open!!!");
+}
+
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket; {
+    NSLog(@"Websocket Connected");
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error; {
+    NSLog(@":( Websocket Failed With Error %@", error);
+    webSocket = nil;
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message; {
+    NSLog(@"Received \"%@\"", message);
+    [self viewDidLoad];
+    [self viewWillAppear:YES];
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean; {
+    NSLog(@"WebSocket closed");
+    self.title = @"Connection Closed! (see logs)";
+    webSocket = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Weex";
+    NSLog(@"------------------------>");
 //    [self addTabelView];
 
     _instance = [[WXSDKInstance alloc] init];

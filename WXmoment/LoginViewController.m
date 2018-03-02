@@ -111,7 +111,7 @@ const int MARGIN = 20; // 内 margin
 
     // 使用weex页面布局
     [WeexJson init];
-    WeexViewController *vc = [[WeexViewController alloc] initWithJs:@"user"];
+    WeexViewController *vc = [[WeexViewController alloc] initWithJs:@"index.weex"];
     [self.navigationController pushViewController:vc animated:YES];
 
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B366B362034868D0064A5B1 /* WeexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B366B352034868D0064A5B1 /* WeexViewController.m */; };
 		1B366B42203717E20064A5B1 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B366B41203717E20064A5B1 /* index.js */; };
+		68B687378AC7AB9DD9453962 /* Websocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B68996946500C55CF8C765 /* Websocket.m */; };
 		68B68E5DD8667949E69E8F35 /* WeexJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B684A682BCAEDC21743904 /* WeexJson.m */; };
 		86951423C9C8FB9D851D4A03 /* WXImgLoaderDefaultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 869516DD18ACB1BEE24A5A7A /* WXImgLoaderDefaultImpl.m */; };
 		86951ECC7525CABE403124F5 /* WeexSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86951AA443E5E042A364968A /* WeexSDKManager.m */; };
@@ -50,8 +51,10 @@
 		1B366B342034868D0064A5B1 /* WeexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeexViewController.h; sourceTree = "<group>"; };
 		1B366B352034868D0064A5B1 /* WeexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeexViewController.m; sourceTree = "<group>"; };
 		1B366B41203717E20064A5B1 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		68B68278D4D539FA586BABAB /* Websocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Websocket.h; sourceTree = "<group>"; };
 		68B684A682BCAEDC21743904 /* WeexJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeexJson.m; sourceTree = "<group>"; };
 		68B688379274CF9A7E1D1493 /* WeexJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeexJson.h; sourceTree = "<group>"; };
+		68B68996946500C55CF8C765 /* Websocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Websocket.m; sourceTree = "<group>"; };
 		869512A130CD6DD201A9A17B /* WeexSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeexSDKManager.h; sourceTree = "<group>"; };
 		869516A24C5CE0033B5AE489 /* WXImgLoaderDefaultImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImgLoaderDefaultImpl.h; sourceTree = "<group>"; };
 		869516DD18ACB1BEE24A5A7A /* WXImgLoaderDefaultImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImgLoaderDefaultImpl.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				869516A24C5CE0033B5AE489 /* WXImgLoaderDefaultImpl.h */,
 				68B684A682BCAEDC21743904 /* WeexJson.m */,
 				68B688379274CF9A7E1D1493 /* WeexJson.h */,
+				68B68996946500C55CF8C765 /* Websocket.m */,
+				68B68278D4D539FA586BABAB /* Websocket.h */,
 			);
 			path = WeexConfig;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				86951ECC7525CABE403124F5 /* WeexSDKManager.m in Sources */,
 				86951423C9C8FB9D851D4A03 /* WXImgLoaderDefaultImpl.m in Sources */,
 				68B68E5DD8667949E69E8F35 /* WeexJson.m in Sources */,
+				68B687378AC7AB9DD9453962 /* Websocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

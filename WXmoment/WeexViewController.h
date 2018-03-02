@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SocketRocket/SRWebSocket.h"
 
-@interface WeexViewController : UIViewController
+@interface WeexViewController : UIViewController<SRWebSocketDelegate> {
+    SRWebSocket *webSocket;
+}
 - (instancetype) initWithJs:(NSString * )filePath;
 @end
