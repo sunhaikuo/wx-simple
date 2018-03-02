@@ -108,10 +108,12 @@ const int MARGIN = 20; // 内 margin
 
 - (void)onLoginBtnClickedFunction:(UIButton *)sender {
     NSLog(@"clicked!");
+
     // 使用weex页面布局
     [WeexJson init];
     WeexViewController *vc = [[WeexViewController alloc] initWithJs:@"user"];
     [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color {

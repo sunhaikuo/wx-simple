@@ -45,12 +45,13 @@
 
     _instance = [[WXSDKInstance alloc] init];
     _instance.viewController = self;
-//    _instance.frame = self.view.frame;
-    _instance.frame = CGRectMake(
-            self.view.frame.origin.x,
-            self.view.frame.origin.y + 64,
-            self.view.frame.size.width,
-            self.view.frame.size.height - 64);
+    _instance.frame = self.view.frame;
+//    适配有tabbar的情况
+//    _instance.frame = CGRectMake(
+//            self.view.frame.origin.x,
+//            self.view.frame.origin.y + 64,
+//            self.view.frame.size.width,
+//            self.view.frame.size.height - 64);
     __weak typeof(self) weakSelf = self;
     _instance.onCreate = ^(UIView *view) {
         [weakSelf.weexView removeFromSuperview];
@@ -68,7 +69,7 @@
         return;
     }
     [_instance renderWithURL:jsUrl];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 // 创建tableView

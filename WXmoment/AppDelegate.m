@@ -30,9 +30,11 @@
     LoginViewController *loginView = [[LoginViewController alloc] init];
 //    WeexViewController *loginView = [[WeexViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
     // 注册顶级组件
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginView];
+//    把顶栏隐藏
+    [nav setNavigationBarHidden:true];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
 
