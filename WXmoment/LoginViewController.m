@@ -94,7 +94,7 @@ const int MARGIN = 20; // 内 margin
 
     [self.view addSubview:self.LoginButton];
     // 触发点击事件
-    [self.LoginButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+//    [self.LoginButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
 }
 
@@ -111,7 +111,7 @@ const int MARGIN = 20; // 内 margin
 
     // 使用weex页面布局
     [WeexJson init];
-    WeexViewController *vc = [[WeexViewController alloc] initWithJs:@"index.weex"];
+    WeexViewController *vc = [[WeexViewController alloc] initWithJs:@"movie"];
     [self.navigationController pushViewController:vc animated:YES];
 
 }

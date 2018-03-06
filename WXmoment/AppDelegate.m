@@ -24,8 +24,10 @@
 
     // 获取json数据
     [WeexJson init];
+    NSLog(@"---------------初始-Start");
     // 注册weex组件
     [WeexSDKManager initWeexSDK];
+    NSLog(@"---------------初始-End");
 
     LoginViewController *loginView = [[LoginViewController alloc] init];
 //    WeexViewController *loginView = [[WeexViewController alloc] init];

@@ -27,16 +27,19 @@
     self = [super init];
     [self openSocket];
     if (self) {
-//        NSString *filePath = [name stringByAppendingString:@".js"];
-//        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//        NSString *documentPath = [paths objectAtIndex:0];
-//        NSString *path = [documentPath stringByAppendingPathComponent:filePath];
-        NSString *path = @"/Users/Mtime/learn/awesome-app/src/.weex_tmp/";
-        path = [path stringByAppendingString:name];
-        path = [path stringByAppendingString:@".js"];
+//        真机调试
+        NSString *filePath = [name stringByAppendingString:@".js"];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentPath = [paths objectAtIndex:0];
+        NSString *path = [documentPath stringByAppendingPathComponent:filePath];
         path = [NSString stringWithFormat:@"file://%@", path];
 
-//        NSString *path=[NSString stringWithFormat:@"file://%@//%@",[NSBundle mainBundle].bundlePath,filePath];
+//        本地调试
+//        NSString *path = @"/Users/Mtime/web/kankan-weex/dist/";
+//        path = [path stringByAppendingString:name];
+//        path = [path stringByAppendingString:@".js"];
+//        path = [NSString stringWithFormat:@"file://%@", path];
+
         NSLog(@"-----path:%@", path);
         jsUrl = [NSURL URLWithString:path];
     }
@@ -44,27 +47,36 @@
 }
 
 - (void)openSocket {
-    NSString *wsUrl = @"ws://192.168.215.159:8083/";
+    NSString *wsUrl = @"http://192.168.215.159:8000/";
     SRWebSocket *socket = [[SRWebSocket alloc] initWithURLRequest:
             [NSURLRequest requestWithURL:[NSURL URLWithString:wsUrl]]];
     socket.delegate = self;    // 实现这个 SRWebSocketDelegate 协议啊
     [socket open];    // open 就是直接连接了
-    NSLog(@"-------------------------------Open!!!");
+
+//    timer传参数
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(checkState:) userInfo:socket repeats:YES];
+
+}
+
+- (void)checkState:(NSTimer *)aTimer {
+    SRWebSocket *socket = aTimer.userInfo;
+    NSLog(@"------->%@", socket.readyState);
+    NSLog(@"Hello ---->");
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket; {
     NSLog(@"Websocket Connected");
 }
 
-- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error; {
-    NSLog(@":( Websocket Failed With Error %@", error);
-    webSocket = nil;
-}
-
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message; {
     NSLog(@"Received \"%@\"", message);
     [self viewDidLoad];
     [self viewWillAppear:YES];
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error; {
+    NSLog(@":( Websocket Failed With Error %@", error);
+    webSocket = nil;
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean; {
